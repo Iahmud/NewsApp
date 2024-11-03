@@ -22,17 +22,7 @@ class DetailsVC: BaseVC {
         setupViewsLayout()
         bindView()
     }
-    
-   
-    
-    private func hideLoading() {
-        coordinator?.hideLoading()
-    }
-    
-    private func showLoading() {
-        coordinator?.showLoading(self)
-    }
-    
+ 
     @IBAction func btnAddToFavourite(_ sender: Any) {
         viewModel.saveArticle()
     }
@@ -49,21 +39,12 @@ class DetailsVC: BaseVC {
 extension DetailsVC {
     
     private func bindView() {
-        viewModel.loading
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] isLoading in
-                isLoading ? self?.showLoading() : self?.hideLoading()
-            }).store(in: &subscriptions)
-        
         viewModel.showError
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] error in
+            .sink(receiveValue: { [weak self] title in
                 guard let self = self else {return}
-                self.hideLoading()
-                self.coordinator?.showToast(error, in: self)
+                AlertManager.showalert(.SaveArticle(title), vc: self)
             }).store(in: &subscriptions)
-
-        
     }
     
 }

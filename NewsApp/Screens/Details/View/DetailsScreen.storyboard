@@ -70,10 +70,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haf-ed-flo">
-                                <rect key="frame" x="16" y="131" width="361" height="705"/>
+                                <rect key="frame" x="16" y="131" width="361" height="671"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iKt-Ub-sYo">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="705"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="671"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,7 +85,7 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkw-y4-11X">
-                                        <rect key="frame" x="177.66666666666663" y="628.66666666666663" width="159.33333333333337" height="52.333333333333371"/>
+                                        <rect key="frame" x="177.66666666666663" y="594.66666666666663" width="159.33333333333337" height="52.333333333333371"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add To Favourite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQM-aH-PgI">
                                                 <rect key="frame" x="15.999999999999993" y="15.999999999999998" width="127.33333333333331" height="20.333333333333329"/>
@@ -139,8 +139,8 @@
                             <constraint firstItem="haf-ed-flo" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="2TU-bX-99c"/>
                             <constraint firstAttribute="trailing" secondItem="haf-ed-flo" secondAttribute="trailing" constant="16" id="gYw-Kp-n52"/>
                             <constraint firstAttribute="trailing" secondItem="v8I-2g-0AP" secondAttribute="trailing" id="hdu-cG-0b5"/>
-                            <constraint firstAttribute="bottom" secondItem="haf-ed-flo" secondAttribute="bottom" constant="16" id="hjE-qU-uMH"/>
                             <constraint firstItem="haf-ed-flo" firstAttribute="top" secondItem="v8I-2g-0AP" secondAttribute="bottom" constant="16" id="ksT-ut-ptw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="haf-ed-flo" secondAttribute="bottom" constant="16" id="l4J-nt-dM3"/>
                             <constraint firstItem="v8I-2g-0AP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="rMj-aI-rxt"/>
                             <constraint firstItem="v8I-2g-0AP" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="tdT-dN-jb3"/>
                         </constraints>

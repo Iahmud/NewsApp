@@ -15,7 +15,7 @@ class FavouriteViewModel: HomeViewModelProtocol {
     var updateView = PassthroughSubject<Bool, Never>()
     var loading = PassthroughSubject<Bool, Never>()
     var showError = PassthroughSubject<String, Never>()
-
+    var updateFilter = CurrentValueSubject<NewsRequestModel, Never>(NewsRequestModel(search: "", date: ""))
     private var articles: [ArticleModel] = []
        
     private var cancellables = Set<AnyCancellable>()

@@ -87,6 +87,11 @@ extension HomeVC {
                 self?.cv.reloadData()
             }).store(in: &subscriptions)
         
+        viewModel.updateFilter
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] filter in
+                self?.fillFilter(filter)
+            }).store(in: &subscriptions)
         
     }
     
@@ -122,6 +127,11 @@ extension HomeVC {
         viewFavourite.isHidden = viewModel.isFilterHidden
         searchBar.isHidden = viewModel.isFilterHidden
         viewDatePicker.isHidden = viewModel.isFilterHidden
+    }
+    
+    func fillFilter(_ data:NewsRequestModel) {
+        datePicker.setDate(data.date?.toDate() ?? Date(), animated: true)
+        searchBar.text = data.search
     }
     
 }

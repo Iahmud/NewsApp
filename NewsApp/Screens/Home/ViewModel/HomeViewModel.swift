@@ -15,19 +15,19 @@ class HomeViewModel: HomeViewModelProtocol {
     var updateView = PassthroughSubject<Bool, Never>()
     var loading = PassthroughSubject<Bool, Never>()
     var showError = PassthroughSubject<String, Never>()
+    var updateFilter = CurrentValueSubject<NewsRequestModel, Never>(NewsRequestModel(search: "apple", date: "2024-11-1"))
 
     var articles: [ArticleModel] = []
        
     private var cancellables = Set<AnyCancellable>()
  
-    private var requestModel = NewsRequestModel(search: "apple", date: Date().toString())
+    private var requestModel = NewsRequestModel(search: "apple", date: "2024-11-1")
 
     var numberOfRowsInSection: Int { articles.count }
 
     func fetchData() {
         getNews()
     }
-
     
 }
 
@@ -36,7 +36,8 @@ class HomeViewModel: HomeViewModelProtocol {
 extension HomeViewModel {
     func searchArticles(with search: String) {
         guard search != "" else {
-           showError.send("Please enter search text")
+            showError.send("Please enter search text")
+            updateFilter.send(requestModel)
             return
         }
         requestModel.search = search

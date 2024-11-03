@@ -10,7 +10,6 @@ import Combine
 
 class DetailsViewModel: NSObject {
     
-    var loading = PassthroughSubject<Bool, Never>()
     var showError = PassthroughSubject<String, Never>()
     private var cancellables = Set<AnyCancellable>()
     var article  = ArticleModel()
@@ -33,11 +32,7 @@ extension DetailsViewModel {
         ArticleRepository.shared.saveArticle(article)
             .sink(receiveCompletion: { completion in
             }, receiveValue: { saved in
-                if saved {
-                    self.showError.send("Article saved")
-                } else {
-                    self.showError.send("Article already exists")
-                }
+                self.showError.send(self.article.title ?? "")
             })
             .store(in: &cancellables)
     }

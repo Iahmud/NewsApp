@@ -14,6 +14,8 @@ protocol HomeViewModelProtocol {
     var updateView : PassthroughSubject<Bool, Never>  { get set }
     var loading : PassthroughSubject<Bool, Never>  { get set }
     var showError : PassthroughSubject<String, Never>  { get set }
+    var updateFilter : CurrentValueSubject<NewsRequestModel, Never>  { get set }
+
     var numberOfRowsInSection: Int { get }
     func fetchData()
     func searchArticles(with search: String)
