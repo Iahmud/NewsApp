@@ -16,6 +16,11 @@ class BaseVC: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBaseViewsLayout()
+    }
+    
+    func setupBaseViewsLayout() {
+        view.backgroundColor = AppTheme.shared.screenBackgroundColor
     }
     
 }
