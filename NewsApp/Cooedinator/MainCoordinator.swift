@@ -27,6 +27,13 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
 
    
+    func gotoDetais(_ article : ArticleModel) {
+        let vc = DetailsVC.instantiate()
+        vc.coordinator = self
+        vc.viewModel.article = article
+        pushViewController(vc)
+    }
+    
     func pushViewController(_ vc:UIViewController) {
         navigationController.pushViewController(vc, animated: animated)
     }

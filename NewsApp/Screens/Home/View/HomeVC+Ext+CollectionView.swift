@@ -32,6 +32,7 @@ extension HomeVC : UICollectionViewDataSource {
 extension HomeVC : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator?.gotoDetais(viewModel.getSelectedCell(indexPath.row))
     }
     
 }
