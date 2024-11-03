@@ -47,7 +47,9 @@ class HomeVC: BaseVC {
     }
     
     @IBAction func btnFavourite(_ sender: Any) {
+        coordinator?.gotoFavourite()
     }
+    
     @IBAction func btnBack(_ sender: Any) {
         coordinator?.back()
     }

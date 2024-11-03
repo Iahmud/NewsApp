@@ -23,9 +23,16 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         navigationController.delegate = self
         let vc = HomeVC.instantiate()
         vc.coordinator = self
+        vc.viewModel = HomeViewModel()
         pushViewController(vc)
     }
 
+    func gotoFavourite() {
+        let vc = HomeVC.instantiate()
+        vc.coordinator = self
+        vc.viewModel = FavouriteViewModel()
+        pushViewController(vc)
+    }
    
     func gotoDetais(_ article : ArticleModel) {
         let vc = DetailsVC.instantiate()

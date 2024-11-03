@@ -80,15 +80,6 @@ extension HomeViewModel {
             .sink(receiveCompletion: { [weak self] completion in
                 guard let self = self else { return }
                 self.loading.send(false)
-                switch completion {
-                case .failure(let error):
-                    self.articles = []
-                    self.updateView.send(true)
-                    self.showError.send("Failed to fetch news: \(error.localizedDescription)")
-                    
-                case .finished:
-                    break
-                }
             }, receiveValue: { [weak self] (newsResponse: NewsResponse) in
                 guard let self = self else { return }
                 
@@ -100,7 +91,6 @@ extension HomeViewModel {
                     self.articles = []
                     self.showError.send("No articles found")
                 }
-                
                 self.updateView.send(true)
             })
             .store(in: &cancellables)
